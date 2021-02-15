@@ -1,15 +1,16 @@
 <template>
 	<div id="app">
-		<h1>Hello world</h1>
+		<app-background>Hola</app-background>
 	</div>
 </template>
 
 <script>
 import '@/assets/styles/App.css';
+import AppBackground from '@/components/Background/Background';
 
 export default {
 	name: 'App',
-	components: {},
+	components: { AppBackground },
 };
 </script>
 
