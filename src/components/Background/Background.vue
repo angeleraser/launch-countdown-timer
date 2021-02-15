@@ -1,8 +1,12 @@
 <template>
 	<div class="app-background">
+		<div id="particles-js"></div>
+		<!-- App content -->
 		<div class="content">
 			<slot></slot>
 		</div>
+
+		<!-- Pattern Hills SVG -->
 		<img
 			src="@/assets/images/svg/pattern-hills.svg"
 			alt="Pattern hills background"
@@ -12,8 +16,15 @@
 </template>
 
 <script>
+import 'particles.js';
+import particlesConfig from '@/assets/particles-config/particles.js';
 export default {
 	name: 'AppBackground',
+	props: ['name', 'lastname'],
+	mounted() {
+		// eslint-disable-next-line no-undef
+		particlesJS('particles-js', particlesConfig);
+	},
 };
 </script>
 
@@ -25,11 +36,13 @@ export default {
 	overflow: hidden;
 	position: relative;
 	width: 100%;
+	z-index: 10;
 }
 
 .app-background .content {
 	min-height: 100vh;
 	width: 100%;
+	z-index: 50;
 }
 
 .app-background img {
@@ -40,6 +53,17 @@ export default {
 	min-width: 1440px;
 	position: absolute;
 	transform: translateX(-46%);
+}
+
+.app-background #particles-js {
+	height: 100%;
+	margin: 0 auto;
+	min-height: 100vh;
+	min-width: 100vw;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: -1;
 }
 
 @media screen and (min-width: 480px) {

@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<app-background>Hola</app-background>
+		<app-background><button>Hola</button></app-background>
 	</div>
 </template>
 
