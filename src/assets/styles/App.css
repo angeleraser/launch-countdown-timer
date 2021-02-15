@@ -1,0 +1,8 @@
+/* Normalizer */
+@import './base/normalize.min.css';
+
+/* Fonts  */
+@import './fonts/fonts.css';
+
+/* Vars and settings */
+@import './settings/vars.css';
