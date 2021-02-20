@@ -40,6 +40,9 @@ export default {
 }
 
 .app-background .content {
+	align-items: flex-start;
+	display: flex;
+	justify-content: center;
 	min-height: 100vh;
 	width: 100%;
 	z-index: 50;

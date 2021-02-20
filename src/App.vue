@@ -1,16 +1,19 @@
 <template>
 	<div id="app">
-		<app-background><button>Hola</button></app-background>
+		<app-background>
+			<countdown-container />
+		</app-background>
 	</div>
 </template>
 
 <script>
 import '@/assets/styles/App.css';
 import AppBackground from '@/components/Background/Background';
+import CountdownContainer from './components/Countdown/Countdown.vue';
 
 export default {
 	name: 'App',
-	components: { AppBackground },
+	components: { AppBackground, CountdownContainer },
 };
 </script>
 
