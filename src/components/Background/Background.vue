@@ -42,10 +42,10 @@ export default {
 .app-background .content {
 	align-items: flex-start;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	min-height: 100vh;
 	width: 100%;
-	z-index: 50;
+	z-index: 100;
 }
 
 .app-background img {

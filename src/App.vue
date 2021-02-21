@@ -2,6 +2,7 @@
 	<div id="app">
 		<app-background>
 			<countdown-container />
+			<app-footer />
 		</app-background>
 	</div>
 </template>
@@ -10,10 +11,11 @@
 import '@/assets/styles/App.css';
 import AppBackground from '@/components/Background/Background';
 import CountdownContainer from './components/Countdown/Countdown.vue';
+import AppFooter from '@/components/Footer/Footer.vue';
 
 export default {
 	name: 'App',
-	components: { AppBackground, CountdownContainer },
+	components: { AppBackground, CountdownContainer, AppFooter },
 };
 </script>
 

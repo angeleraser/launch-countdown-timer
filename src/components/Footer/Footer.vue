@@ -49,4 +49,25 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+footer {
+	z-index: 100;
+	margin: auto auto 48px;
+}
+
+ul {
+	display: flex;
+}
+
+ul li:not(:last-child) {
+	margin-right: 32px;
+}
+
+ul li a:hover svg path {
+	transition: fill 0.3s;
+}
+
+ul li a:hover svg path {
+	fill: var(--soft-red);
+}
+</style>
