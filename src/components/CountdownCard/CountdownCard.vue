@@ -44,13 +44,9 @@ export default {
 		classNames() {
 			return {
 				reversed: this.isReverse,
-				[`not-reversed`]: !this.isReverse,
 			};
 		},
 	},
-	// updated() {
-	// 	this.isReverse = true;
-	// },
 };
 </script>
 
@@ -115,7 +111,7 @@ export default {
 	position: absolute;
 	z-index: 20;
 	overflow-x: hidden;
-	transition: all 0.1s linear;
+	transition: all 0.8s linear;
 }
 
 .dots .line {
@@ -150,6 +146,7 @@ export default {
 	font-size: 2.6em;
 	z-index: 10;
 	transition: transform 0.8s, opacity 0.2s linear;
+	transform: rotateX(0deg) rotateY(0deg);
 	transition-delay: 0.3s;
 }
 
@@ -173,32 +170,19 @@ export default {
 	z-index: 100;
 }
 
-.countdown-card.not-reversed .cap.with-opacity {
-	transform: rotateX(0deg);
-}
-
 .countdown-card.reversed .cap.with-opacity::after {
 	background-color: var(--dark-desaturated-blue);
 	opacity: 1;
 }
 
 .countdown-card.reversed .dots {
-	opacity: 0;
-}
-
-.countdown-card.not-reversed {
-	opacity: 1;
+	transform: rotateX(180deg);
 }
 
 .countdown-card.reversed .time {
 	transform: rotateX(180deg);
 	opacity: 0;
 	transition: opacity 0s;
-}
-
-.countdown-card.not-reversed .time {
-	transform: rotateX(0deg) rotateY(0deg);
-	opacity: 1;
 }
 
 @media screen and (min-width: 768px) {
