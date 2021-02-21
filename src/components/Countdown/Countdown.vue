@@ -2,10 +2,11 @@
 	<div class="countdown-container">
 		<h1 class="heading">We're launching soon</h1>
 		<div class="countdown-cards">
-			<countdown-card />
-			<countdown-card />
-			<countdown-card />
-			<countdown-card />
+			<countdown-card
+				v-for="name in countdownCardsTitles"
+				:key="name"
+				:cardTitle="name"
+			/>
 		</div>
 	</div>
 </template>
@@ -15,6 +16,11 @@ import CountdownCard from '../CountdownCard/CountdownCard.vue';
 export default {
 	components: { CountdownCard },
 	name: 'CountdownContainer',
+	data() {
+		return {
+			countdownCardsTitles: ['days', 'hours', 'minutes', 'seconds'],
+		};
+	},
 };
 </script>
 
@@ -31,7 +37,7 @@ export default {
 h1 {
 	color: var(--white);
 	font-family: var(--ff-red-hat);
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: var(--fw-bold);
 	letter-spacing: 10px;
 	line-height: 1.5;

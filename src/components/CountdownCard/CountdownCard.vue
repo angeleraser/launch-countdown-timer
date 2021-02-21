@@ -1,18 +1,31 @@
 <template>
-	<div class="countdown-card">
-		<span class="with-opacity cap"></span>
-		<span class="time">08</span>
-		<span class="cap no-opacity"></span>
+	<div class="countdown-card-wrapper">
+		<div class="countdown-card">
+			<span class="with-opacity cap"></span>
+			<span class="time">08</span>
+			<span class="cap no-opacity"></span>
+		</div>
+		<span class="title">{{ cardTitle }}</span>
 	</div>
 </template>
 
 <script>
 export default {
 	name: 'CountdownCard',
+	props: {
+		cardTitle: {
+			type: String,
+			required: true,
+		},
+	},
 };
 </script>
 
 <style scoped>
+.countdown-card-wrapper {
+	position: relative;
+}
+
 .countdown-card {
 	align-items: center;
 	background-color: var(--dark-desaturated-blue);
@@ -69,5 +82,32 @@ export default {
 
 .time {
 	font-size: 2.8em;
+}
+
+.title {
+	bottom: -24px;
+	color: var(--grayish-blue);
+	font-family: var(--ff-red-hat);
+	font-size: 8px;
+	font-weight: var(--fw-bold);
+	left: 50%;
+	letter-spacing: 6px;
+	position: absolute;
+	text-transform: uppercase;
+	transform: translateX(-50%);
+}
+
+@media screen and (min-width: 768px) {
+	.title {
+		bottom: -28px;
+		font-size: 10px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.title {
+		bottom: -32px;
+		font-size: 12px;
+	}
 }
 </style>
