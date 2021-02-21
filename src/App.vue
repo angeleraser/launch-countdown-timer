@@ -1,7 +1,11 @@
 <template>
 	<div id="app">
 		<app-background>
-			<countdown-container />
+			<app-countdown
+				@increaseYear="updateDateYear"
+				:startDate="startDate"
+				:endDate="endDate"
+			/>
 			<app-footer />
 		</app-background>
 	</div>
@@ -10,12 +14,23 @@
 <script>
 import '@/assets/styles/App.css';
 import AppBackground from '@/components/Background/Background';
-import CountdownContainer from './components/Countdown/Countdown.vue';
+import AppCountdown from './components/Countdown/Countdown.vue';
 import AppFooter from '@/components/Footer/Footer.vue';
 
 export default {
 	name: 'App',
-	components: { AppBackground, CountdownContainer, AppFooter },
+	components: { AppBackground, AppCountdown, AppFooter },
+	data() {
+		return {
+			startDate: new Date(),
+			endDate: new Date(2022, 9, 9, 0),
+		};
+	},
+	methods: {
+		updateDateYear(newDate) {
+			this.endDate = newDate;
+		},
+	},
 };
 </script>
 

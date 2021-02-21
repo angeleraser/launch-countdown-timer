@@ -2,7 +2,7 @@
 	<div class="countdown-card-wrapper">
 		<div class="countdown-card">
 			<span class="with-opacity cap"></span>
-			<span class="time">08</span>
+			<span class="time">{{ cardCount }}</span>
 			<span class="cap no-opacity"></span>
 		</div>
 		<span class="title">{{ cardTitle }}</span>
@@ -15,6 +15,10 @@ export default {
 	props: {
 		cardTitle: {
 			type: String,
+			required: true,
+		},
+		cardCount: {
+			type: Number,
 			required: true,
 		},
 	},
@@ -81,7 +85,7 @@ export default {
 }
 
 .time {
-	font-size: 2.8em;
+	font-size: 2.6em;
 }
 
 .title {

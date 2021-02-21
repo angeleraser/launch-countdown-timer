@@ -20,7 +20,6 @@ import 'particles.js';
 import particlesConfig from '@/assets/particles-config/particles.js';
 export default {
 	name: 'AppBackground',
-	props: ['name', 'lastname'],
 	mounted() {
 		// eslint-disable-next-line no-undef
 		particlesJS('particles-js', particlesConfig);
