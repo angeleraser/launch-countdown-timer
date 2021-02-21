@@ -43,10 +43,22 @@ h1 {
 .countdown-cards {
 	display: grid;
 	font-size: 3.3vw;
-	grid-template-columns: repeat(4, 6em);
+	grid-template-columns: repeat(4, 5.8em);
 	grid-template-rows: 5.5em;
 	max-width: 688px;
 	place-content: space-between;
 	width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+	.countdown-cards {
+		font-size: 2.3vw;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.countdown-cards {
+		font-size: 26px;
+	}
 }
 </style>
